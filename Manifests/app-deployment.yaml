@@ -24,7 +24,7 @@ spec:
         - name: MYSQL_ROOT_PASSWORD
           valueFrom:
             secretKeyRef:
-              name: mysql-password
+              name: mysql-secret
               key: password
         ports:
         - containerPort: 3306
@@ -57,7 +57,7 @@ spec:
         tier: frontend
     spec:
       containers:
-      - image: ?????
+      - image: acrdevopse.azurecr.io/simple-app
         name: simpleapp
         env:
         - name: MYSQL_DATABASE
@@ -65,7 +65,7 @@ spec:
         - name: MYSQL_PASSWORD
           valueFrom:
             secretKeyRef:
-              name: mysql-password
+              name: mysql-secret
               key: password
         ports:
         - containerPort: 80
