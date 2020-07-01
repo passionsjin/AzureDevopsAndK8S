@@ -94,8 +94,7 @@ spec:
         ports:
         - containerPort: 80
           name: simpleapp
-      imagepullSecrets:
-      - name: imagepullsecret
+
 ---
 apiVersion: v1
 kind: Service
