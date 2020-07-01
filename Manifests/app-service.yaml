@@ -38,3 +38,4 @@ spec:
     app: simpleapp
     tier: frontend
   type: LoadBalancer
+
