@@ -21,6 +21,17 @@ spec:
       - image: mysql:5.7
         name: mysql
         env:
+        - name: MYSQL_DATABASE
+          value: simpleapp
+        - name: MYSQL_USER
+          value: user
+        - name: MYSQL_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mysql-secret
+              key: password
+        - name: MYSQL_PORT
+          value: 3306
         - name: MYSQL_ROOT_PASSWORD
           valueFrom:
             secretKeyRef:
@@ -60,9 +71,22 @@ spec:
       - image: acrdevopse.azurecr.io/simple-app
         name: simpleapp
         env:
+        - name: DJANGO_SETTINGS_MODULE
+          value: simpleapp.settings.production
         - name: MYSQL_DATABASE
-          value: simpleapp-mysql
+          value: simpleapp
+        - name: MYSQL_USER
+          value: user
         - name: MYSQL_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mysql-secret
+              key: password
+        - name: MYSQL_PORT
+          value: 3306
+        - name: MYSQL_HOST
+          value: simpleapp-mysql
+        - name: MYSQL_ROOT_PASSWORD
           valueFrom:
             secretKeyRef:
               name: mysql-secret
