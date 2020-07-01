@@ -68,7 +68,7 @@ spec:
         tier: frontend
     spec:
       containers:
-      - image: acrdevopse.azurecr.io/simple-app
+      - image: acrdevopse.azurecr.io/simple-app:latest
         name: simpleapp
         env:
         - name: DJANGO_SETTINGS_MODULE
