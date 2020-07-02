@@ -53,20 +53,6 @@ def logout(request):
     return redirect('home')
 
 
-def redis_increase(request):
-    if cache.get('con_count') is None:
-        cache.set('con_count', 1, 3600)
-    else:
-        cache.incr('con_count')
-    count = cache.get('con_count')
-    return HttpResponse(f'count : {count}')
-
-
-def redis_get(request):
-    count = cache.get('con_count')
-    return HttpResponse(f'count : {count}')
-
-
 def sleep_func(request):
     if request.GET['second']:
         sec = int(request.GET['second'])
