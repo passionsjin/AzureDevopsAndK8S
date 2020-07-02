@@ -74,5 +74,3 @@ def sleep_func(request):
         sec = 1
     asyn_sleep.delay(sec)
     return HttpResponse(f'wake {sec}')
-
-def async_func(request):
