@@ -134,6 +134,7 @@ metadata:
 spec:
   ports:
     - port: 80
+      targetPort: 8000
   selector:
     app: simpleapp
     tier: frontend
