@@ -1,0 +1,41 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: simpleapp-mysql
+  labels:
+    app: simpleapp
+spec:
+  ports:
+    - port: 3306
+  selector:
+    app: simpleapp
+    tier: mysql
+  clusterIP: None
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mysql-pv-claim
+  labels:
+    app: simpleapp
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 20Gi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: simpleapp
+  labels:
+    app: simpleapp
+spec:
+  ports:
+    - port: 80
+      targetPort: 8000
+  selector:
+    app: simpleapp
+    tier: frontend
+  type: LoadBalancer
