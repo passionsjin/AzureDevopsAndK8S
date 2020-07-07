@@ -94,5 +94,17 @@ spec:
               name: mysql-secret
               key: password
         ports:
-        - containerPort: 80
+        - containerPort: 8000
           name: simpleapp
+      - image: nginx
+        name: simpleapp-nginx
+        ports:
+        - containerPort: 80
+        volumeMounts:
+          - mountPath: /etc/nginx/conf.d
+            name: nginx-config
+            readOnly: true
+      volumes:
+        - name: nginx-config
+          configMap:
+            name: nginx-config

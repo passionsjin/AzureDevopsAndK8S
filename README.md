@@ -43,7 +43,7 @@ Git repository를 생성하고, 프로젝트에 사용할 소스코드를 Push �
 ![](2020-07-02-13-31-23.png)
 
 **Board의 티켓에 Repo의 branch를 연결하고 이슈를 추적 및 관리 할 수있다.**  
-작년 프로젝트에서 Task하나당 Branch 하나로 업무를 진행한 적이 있다. Pull Request로 팀원 혹은 팀장의 승인을 받으면 해당 Task는 자동으로 Done 상태로 변경되고 바로 다음 작업을 수행했다. 
+작년 프로젝트에서 Task하나당 Branch 하나로 업무를 진행한 적이 있다. Pull Request로 팀원 혹은 팀장의 승인을 받으면 해당 Task는 자동으로 Done 상태로 변경되고 바로 다음 작업을 수행했다.  
 (참고) Commit 메세지에 task id를 적으면 자동으로 Done 상태가 된다. [관련Docs](https://docs.microsoft.com/en-us/azure/devops/repos/git/resolution-mentions?view=azure-devops)  
 ![](2020-07-02-14-25-25.png)  
 Task만으로 개발내용을 동시에 추적가능하고 상태를 자동으로 변경 할 수있어 이러한 기능은 개발에 집중하는데 많은 도움이 된다.
