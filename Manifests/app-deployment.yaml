@@ -108,6 +108,3 @@ spec:
         - name: nginx-conf
           configMap:
             name: nginx-conf
-            items:
-              - key: nginx-conf
-                path: default.conf
