@@ -96,15 +96,22 @@ spec:
         ports:
         - containerPort: 8000
           name: simpleapp
+        volumeMounts:
+        - name: staticfiles
+          mountPath: /staticfiles
       - image: nginx
         name: simpleapp-nginx
         ports:
         - containerPort: 80
         volumeMounts:
-          - mountPath: /etc/nginx/conf.d
-            name: nginx-conf
-            readOnly: true
+        - name: staticfiles
+          mountPath: /staticfiles
+        - mountPath: /etc/nginx/conf.d
+          name: nginx-conf
+          readOnly: true
       volumes:
+        - name: staticfiles
+          emptyDir: {}
         - name: nginx-conf
           configMap:
             name: nginx-conf
