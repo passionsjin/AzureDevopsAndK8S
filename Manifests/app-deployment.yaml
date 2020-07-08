@@ -110,4 +110,4 @@ spec:
             name: nginx-conf
             items:
               - key: nginx-conf
-                path: nginx.conf
+                path: default.conf
