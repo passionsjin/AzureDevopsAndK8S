@@ -5,4 +5,4 @@ django-mysql==3.7.0
 mysqlclient==1.4.6
 django-redis==4.12.1
 redis==3.5.3
-celery==4.4.6
+celery==5.2.2
